@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./assets/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <header class="header text-center">
+    <h1>Demo Electron</h1>
+  </header>
+  <main class="main-content">
+    <div class="container">
+      <button type="button" class="btn btn-default" id="btn-create-window">Create Frame Window</button>
+      <button type="button" class="btn btn-default" id="btn-show-grawfull-window">Show window grawfully</button>
+      <button type="button" class="btn btn-default" id="btn-create-modal-window">Create Modal Window</button>
+      <button type="button" class="btn btn-default" id="btn-open-link">Open external link</button>
+      <button type="button" class="btn btn-default" id="btn-notification">Create nofitication</button>
+      <button type="button" class="btn btn-default" id="btn-open-image">Open Image</button>
+      <button type="button" class="btn btn-default" id="btn-put-in-tray">Put In Tray</button>
+      <button type="button" class="btn btn-default" id="btn-async-message">Asyn Message</button>
+      <button type="button" class="btn btn-default" id="btn-sync-message">Sync Message</button>
+      <button type="button" class="btn btn-default" id="btn-capture-desktop">Capture Desktop</button>
+      <p id="selected-file"></p>
+      <div id="holder"></div>
+    </div>
+  </main>
+  <script type="text/javascript">
+    require('./renderer-process/windows/frame-window.js')
+    require('./renderer-process/windows/grawful-window.js')
+    require('./renderer-process/windows/modal-window.js')
+    require('./renderer-process/native-ui/open-external-link.js')
+    require('./renderer-process/native-ui/notification.js')
+    require('./renderer-process/native-ui/open-file.js')
+    require('./renderer-process/comunication/async-message.js')
+    require('./renderer-process/comunication/sync-message.js')
+    require('./renderer-process/filesystem/drag-file.js')
+    require('./renderer-process/media/desktop-capture.js')
+  </script>
+</body>
+</html>
